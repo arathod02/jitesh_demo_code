@@ -11,18 +11,32 @@ public abstract class GenericCar implements Car {
 		incrementCarCount();
 	}
 	
+	/*public GenericCar() {
+		this.carBrandName = null;
+		incrementCarCount();
+	}*/
+	
+	
+	
+
+	
 	private static void incrementCarCount(){
 		carCount++;
 	}
 	
+	public void performSpecializedBehaviour(){ 
+		System.out.println("I am performing generic behaviour. Secialized classes can "
+			+ " override me and do their own specialized behaviour");
+	}
+	
 	@Override
 	final public void moveCar() {
-		System.out.println("Moving " + this.carBrandName);
+		System.out.println("Moving Car");
 	}
 	
 	@Override
 	public void moveCar( int speed ) {
-		System.out.println("Moving " + this.carBrandName + " @ " + speed + " Kph");
+		System.out.println("Moving Car " + this.carBrandName.toUpperCase() + " @ " + speed + " Kph");
 	}
 	
 	public int returnCarCount(){

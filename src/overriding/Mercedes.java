@@ -6,9 +6,9 @@ public class Mercedes extends GenericCar {
 		super(carBrandName);
 	}
 
-	@Override
+	/*@Override
 	public void performSpecializedBehaviour() {
 		System.out.println("Performing Mercedes's specialized behaviour");
-	}
+	}*/
 
 }
