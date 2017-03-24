@@ -1,0 +1,51 @@
+Task
+
+Build a report spitting out the mutual funds portfolio.
+
+Output report format
+
+Sr No, ISIN, Mutual Funds Name
+SIP Date, SIP amount, No of units purchased, Total Units, Total Investment, Market Value
+
+
+
+
+The program will read the input file whose nomenclature will be as follows
+
+ISIN, SIP Start Date, SIP amount, SIP Frequency 
+
+Where, 
+SIP Start Date YYYYMMDD
+SIP Frequency : Monthly, Quarterly, Yearly
+
+The Program should read this input file and generate the above mentioned output report.
+
+E.g.
+
+Input File
+ISIN, SIP Start Date, SIP amount, SIP Frequency
+IND12345, 20170101, 5000, Monthly
+IND98745, 20170101, 10000, Quarterly
+IND50505, 20160101, 45000, Yearly
+
+The output report as on 20170324 should be as follows:
+1, IND12345, XYZ Mutual Funds
+20170101, 5000, 10 ( Assuming one unit is worth 500 on 20170101 ), 5000, 5000 
+20170201, 5000, 20 ( Assuming one unit is worth 400 on 20170201 ), 10000, ( 4000 + 5000 ) 9000  
+20170301, .........
+
+2, IND98745, ABC Mutual Funds
+20170101, 10000, 10 ( Assuming one unit is worth 1000 on 20170101 ), 10000, 10000
+20170301, 10000, 5  ( Assuming one unit is worth 2000 on 20170103 ), 20000, ( 20000 + 10000 ) 30000
+
+3,IND50505, PQR Mutual Funds 
+20160101, 45000, 50 ( Assuming one unit is worth 900 on 20160101), 45000, 45000
+20170101, 45000, 90 ( Assuming one unit is worth 500 on 20170101), 90000, ( 25000 + 45000 ) 70000
+
+
+The main task is here to connect to some third party via it's exposed api to fetch the price of one unit on a given day using the supplied ISIN.
+Something like this : moneyControlApi.fetchUnitPrice( IND12345, 20170101 ); ( www.moneycontrol.com )
+
+U will have to figure out from where can u find such a third party api. 
+I assume MoneyControl does provide such an api. But if not the case, then research
+
